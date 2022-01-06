@@ -15,9 +15,14 @@ def get_short_hash(long_hash: str):
     return long_hash[:8]
 
 
+def parse_commit_date(date: str) -> datetime:
+    return datetime.strptime(date, "%a %b %d %H:%M:%S %Y")
+
+
 def get_commit_date(previous: Optional[int] = None) -> datetime:
+    commit_ref = "HEAD" if previous is None else f"HEAD~{previous}"
     date_str = subprocess.check_output(
-        ['git', 'log',
-            'HEAD' if previous is None else f'HEAD~{previous}', "--format=%cd", "--date=local"]
-    ).decode('utf-8').strip()
-    return parser.parse(date_str)
+        ['git', 'log', commit_ref, "--format=%cd", "--date=local"]
+    ).decode('utf-8').strip().split("\n")[0]
+
+    return parse_commit_date(date_str)

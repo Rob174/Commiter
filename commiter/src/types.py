@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from enums import Enum
+from enum import Enum
 
 
-class StatusEnum(Enum):
+class StatusEnum(str, Enum):
     TODO = "TODO"
     DONE = 'DONE'
     BUILDING = "BUILDING"
@@ -13,4 +13,3 @@ class StatusEnum(Enum):
     TO_IMPROVE = "TO_IMPROVE"
     PAUSE = "PAUSE"
     RELEASE = "RELEASE"
-
