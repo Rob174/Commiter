@@ -1,0 +1,47 @@
+{
+    "status.identifiers": ["abbreviation"],
+    "status.default": "TODO",
+    "status.bug": "BUG",
+    "status": {
+        "TODO": {
+            "symbol": " ",
+            "abbreviation": "t"
+        },
+        "DONE": {
+            "symbol": "✅",
+            "abbreviation": "d"
+        },
+        "BUILDING": {
+            "symbol": "🔨",
+            "abbreviation": "b"
+        },
+        "IN_PROGRESS": {
+            "symbol": "⏲️",
+            "abbreviation": "ip"
+        },
+        "WAITING": {
+            "symbol": "⏳️",
+            "abbreviation": "w"
+        },
+        "PROBLEM": {
+            "symbol": "🚩",
+            "abbreviation": "pb"
+        },
+        "BUG": {
+            "symbol": "🐛",
+            "abbreviation": "bug"
+        },
+        "TO_IMPROVE": {
+            "symbol": "〰️",
+            "abbreviation": "ti"
+        },
+        "STOP": {
+            "symbol": "🛑",
+            "abbreviation": "s"
+        },
+        "RELEASE": {
+            "symbol": "🛰️",
+            "abbreviation": "r"
+        }
+    }
+}

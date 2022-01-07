@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import *
 import subprocess
 from dateutil import parser
 from datetime import datetime
@@ -26,3 +26,17 @@ def get_commit_date(previous: Optional[int] = None) -> datetime:
     ).decode('utf-8').strip().split("\n")[0]
 
     return parse_commit_date(date_str)
+
+
+def parse_printer_format_range(string: str) -> Sequence[int]:
+    string = string.split(",")  # type: ignore
+    values = []
+    for s in string:
+        try:
+            value = int(s)
+            value = [value]
+        except ValueError:
+            value = s.split("-")
+            value = list(range(int(value[0]), int(value[1])+1))
+        values.extend(value)
+    return values
